@@ -15,6 +15,7 @@
 		AE221CE5218EA1A30021E4C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE221CE3218EA1A30021E4C1 /* LaunchScreen.storyboard */; };
 		AE221CF0218EA1A30021E4C1 /* SampleUnitTranslateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE221CEF218EA1A30021E4C1 /* SampleUnitTranslateTests.swift */; };
 		AE221CFB218EA1A30021E4C1 /* SampleUnitTranslateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE221CFA218EA1A30021E4C1 /* SampleUnitTranslateUITests.swift */; };
+		AEF8916821991D61003D203B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8916721991D61003D203B /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AE221CF6218EA1A30021E4C1 /* SampleUnitTranslateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUnitTranslateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE221CFA218EA1A30021E4C1 /* SampleUnitTranslateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUnitTranslateUITests.swift; sourceTree = "<group>"; };
 		AE221CFC218EA1A30021E4C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF8916721991D61003D203B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AE221CE1218EA1A30021E4C1 /* Assets.xcassets */,
 				AE221CE3218EA1A30021E4C1 /* LaunchScreen.storyboard */,
 				AE221CE6218EA1A30021E4C1 /* Info.plist */,
+				AEF8916721991D61003D203B /* TableViewController.swift */,
 			);
 			path = SampleUnitTranslate;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				AE1A4DDA218EAF44001B00B8 /* LengthViewController.swift in Sources */,
 				AE221CDD218EA1A20021E4C1 /* ViewController.swift in Sources */,
 				AE221CDB218EA1A20021E4C1 /* AppDelegate.swift in Sources */,
+				AEF8916821991D61003D203B /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
