@@ -29,7 +29,7 @@
                                         </constraints>
                                         <state key="normal" image="length"/>
                                         <connections>
-                                            <action selector="lengthbuttontouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQK-VN-GeK"/>
+                                            <action selector="length:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J2I-YU-hIB"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4y-C3-iHK">
@@ -67,6 +67,9 @@
                                             <constraint firstAttribute="height" constant="144" id="oAt-XN-vff"/>
                                         </constraints>
                                         <state key="normal" image="area"/>
+                                        <connections>
+                                            <action selector="area:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zGg-Y4-pDL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-Uz-IaV">
                                         <rect key="frame" x="0.0" y="144" width="160" height="36"/>
@@ -279,11 +282,12 @@
                     </view>
                     <connections>
                         <segue destination="wJ0-lM-JSy" kind="show" identifier="gotolengthview" id="asj-3m-frP"/>
+                        <segue destination="oCl-pr-4Jb" kind="show" identifier="gotoareaview" id="kPO-Wv-vbu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-567" y="-748"/>
         </scene>
         <!--Length View Controller-->
         <scene sceneID="XVa-OD-VyC">
@@ -391,7 +395,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSA-kp-LA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311" y="-1354"/>
+            <point key="canvasLocation" x="1999" y="-2318"/>
+        </scene>
+        <!--Area View Controller-->
+        <scene sceneID="wMc-ma-ejz">
+            <objects>
+                <viewController id="oCl-pr-4Jb" customClass="AreaViewController" customModule="SampleUnitTranslate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aSd-f3-qov">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGM-fW-0QQ" userLabel="frompickl">
+                                <rect key="frame" x="16" y="300" width="160" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oCl-pr-4Jb" id="D8O-bf-1hb"/>
+                                    <outlet property="delegate" destination="oCl-pr-4Jb" id="i39-Qe-M3K"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJZ-Yl-ovA" userLabel="topick">
+                                <rect key="frame" x="199" y="300" width="160" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oCl-pr-4Jb" id="kav-Bk-jnb"/>
+                                    <outlet property="delegate" destination="oCl-pr-4Jb" id="I7S-Cq-NYZ"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjX-kv-v0g">
+                                <rect key="frame" x="16" y="232" width="160" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYI-9T-cNT">
+                                <rect key="frame" x="199" y="232" width="160" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFr-GK-5AR">
+                                <rect key="frame" x="16" y="164" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Input the value you want to translate" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1t-Po-W8S" userLabel="fromvalue">
+                                <rect key="frame" x="37" y="391" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzL-BH-F48">
+                                <rect key="frame" x="107" y="450" width="160" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxR-np-F2J">
+                                <rect key="frame" x="136" y="551" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculate:" destination="oCl-pr-4Jb" eventType="touchUpInside" id="3VR-Js-3zo"/>
+                                    <action selector="calculate:" destination="wJ0-lM-JSy" eventType="touchUpInside" id="JOa-IR-fgQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsW-vv-12T">
+                                <rect key="frame" x="16" y="551" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="goback:" destination="wJ0-lM-JSy" eventType="touchUpInside" id="C5G-65-Lc4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qe-cz-kRn">
+                                <rect key="frame" x="258" y="551" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Data"/>
+                                <connections>
+                                    <action selector="SaveData:" destination="wJ0-lM-JSy" eventType="touchUpInside" id="ilx-3U-2Fp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UC-XA-w6B">
+                                <rect key="frame" x="136" y="656" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Saved Data"/>
+                                <connections>
+                                    <action selector="gotableview:" destination="wJ0-lM-JSy" eventType="touchUpInside" id="SO1-78-7yC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cfJ-0n-LnD"/>
+                    </view>
+                    <connections>
+                        <outlet property="frompick" destination="QGM-fW-0QQ" id="M36-Sa-aTg"/>
+                        <outlet property="inputevalue" destination="K1t-Po-W8S" id="6G4-Fl-5Qf"/>
+                        <outlet property="inputvalue" destination="K1t-Po-W8S" id="DyP-BG-dmC"/>
+                        <outlet property="outputvalue" destination="dzL-BH-F48" id="N92-al-tFn"/>
+                        <outlet property="topick" destination="gJZ-Yl-ovA" id="cOI-5m-neG"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goback" id="0Sj-NN-huZ"/>
+                        <segue destination="hfc-Wo-Z92" kind="show" identifier="gototableview" id="shI-3D-uzk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2n-7e-6in" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="-1385"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="6Uu-rT-3Ws">
@@ -402,7 +516,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-Ch-nE3">
-                                <rect key="frame" x="0.0" y="169" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="576"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -420,14 +534,44 @@
                                     <outlet property="delegate" destination="hfc-Wo-Z92" id="3aH-V9-H49"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDu-CK-fVw">
+                                <rect key="frame" x="16" y="44" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTQ-09-SzJ">
+                                <rect key="frame" x="221" y="728" width="99" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Previous Page"/>
+                                <connections>
+                                    <action selector="goToPreviousPage:" destination="hfc-Wo-Z92" eventType="touchUpInside" id="Nyy-5Q-oPe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHQ-W0-Jiz">
+                                <rect key="frame" x="67" y="728" width="75" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Main Page"/>
+                                <connections>
+                                    <action selector="goToMainPage:" destination="hfc-Wo-Z92" eventType="touchUpInside" id="EZ5-gU-Ibf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8rm-GT-Sn7"/>
                     </view>
+                    <connections>
+                        <outlet property="head" destination="hDu-CK-fVw" id="SK7-sj-nab"/>
+                        <outlet property="tableView" destination="Xg2-Ch-nE3" id="rTa-zx-U4u"/>
+                        <segue destination="wJ0-lM-JSy" kind="show" identifier="gotolength" id="i1l-9h-TjH"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="gotomainpage" id="QL6-Wa-I6x"/>
+                        <segue destination="oCl-pr-4Jb" kind="show" identifier="gotoarea" id="UOb-0E-dme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTi-Yd-Qbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4533.6000000000004" y="-1041.1330049261085"/>
+            <point key="canvasLocation" x="4810" y="-749"/>
         </scene>
     </scenes>
     <resources>
@@ -438,4 +582,10 @@
         <image name="temperature" width="200" height="200"/>
         <image name="volume" width="106.89795684814453" height="109.83673095703125"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="shI-3D-uzk"/>
+        <segue reference="kPO-Wv-vbu"/>
+        <segue reference="asj-3m-frP"/>
+        <segue reference="0Sj-NN-huZ"/>
+    </inferredMetricsTieBreakers>
 </document>

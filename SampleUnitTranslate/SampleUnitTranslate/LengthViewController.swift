@@ -9,6 +9,7 @@ class LengthViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var toindex = 0
     var fromvalue = 0.0
     var tovalue = 0.0
+    var vaild = false
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -48,8 +49,10 @@ class LengthViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let input = Double(inputvalue.text!) {
             tovalue = (input/lengthkey[fromindex])*lengthkey[toindex]
             outputvalue.text = String(tovalue)
+            vaild = true
         } else {
             print("Not a valid number: \(inputvalue.text!)")
+            vaild = false
         }
     }
     
@@ -59,23 +62,28 @@ class LengthViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     @IBAction func gotableview(_ sender: Any) {
+        let from = "length"
+        UserDefaults.standard.set(from, forKey: "from")
         performSegue(withIdentifier: "gototableview", sender: self)
     }
     
     @IBAction func SaveData(_ sender: Any) {
-        var items : [String]
-        let SavedLength = UserDefaults.standard.object(forKey: "length")
-        if let temp = SavedLength as? [String] {
-            items = temp
-            items.append(inputvalue.text! + "  " + String(lengthunit[fromindex]) + "  " + outputvalue.text! + "  " + String(lengthunit[toindex]))
+        print(vaild)
+        if vaild {
+            var items : [String]
+            let SavedLength = UserDefaults.standard.object(forKey: "length")
+            if let temp = SavedLength as? [String] {
+                items = temp
+                items.append(inputvalue.text! + "  " + String(lengthunit[fromindex]) + "  " + outputvalue.text! + "  " + String(lengthunit[toindex]))
+                
+            }else{
+                items = [inputvalue.text! + "  " + String(lengthunit[fromindex]) + "  " + outputvalue.text! + "  " + String(lengthunit[toindex])]
+            }
+            print(items)
             
-        }else{
-            items = [inputvalue.text! + "  " + String(lengthunit[fromindex]) + "  " + outputvalue.text! + "  " + String(lengthunit[toindex])]
+            UserDefaults.standard.set(items, forKey: "length")
+            
         }
-        print(items)
-        
-        UserDefaults.standard.set(items, forKey: "length")
-        
     }
     
     
