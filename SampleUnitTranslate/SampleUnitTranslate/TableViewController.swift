@@ -44,6 +44,46 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             }else{
                 print("Try other")
             }
+        case "area":
+            head.text = "Area Values"
+            let SavedLength = UserDefaults.standard.object(forKey: "area")
+            if let temp = SavedLength as? [String] {
+                values = temp
+            }else{
+                print("Try other")
+            }
+        case "volume":
+            head.text = "Volume Values"
+            let SavedLength = UserDefaults.standard.object(forKey: "volume")
+            if let temp = SavedLength as? [String] {
+                values = temp
+            }else{
+                print("Try other")
+            }
+        case "speed":
+            head.text = "Speed Values"
+            let SavedLength = UserDefaults.standard.object(forKey: "speed")
+            if let temp = SavedLength as? [String] {
+                values = temp
+            }else{
+                print("Try other")
+            }
+        case "temperature":
+            head.text = "Temperature Values"
+            let SavedLength = UserDefaults.standard.object(forKey: "temperature")
+            if let temp = SavedLength as? [String] {
+                values = temp
+            }else{
+                print("Try other")
+            }
+        case "energy":
+            head.text = "Energy Values"
+            let SavedLength = UserDefaults.standard.object(forKey: "energy")
+            if let temp = SavedLength as? [String] {
+                values = temp
+            }else{
+                print("Try other")
+            }
         default:
             print("Error")
         }
@@ -54,18 +94,43 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             values.remove(at: indexPath.row)
             print("get it")
             tableView.reloadData()
-            UserDefaults.standard.set(values, forKey: "length")
+            switch from {
+            case "length":
+                UserDefaults.standard.set(values, forKey: "length")
+            case "area":
+                UserDefaults.standard.set(values, forKey: "area")
+            case "volume":
+                UserDefaults.standard.set(values, forKey: "volume")
+            case "speed":
+                UserDefaults.standard.set(values, forKey: "speed")
+            case "temperature":
+                UserDefaults.standard.set(values, forKey: "temperature")
+            case "energy":
+                UserDefaults.standard.set(values, forKey: "energy")
+            default:
+                print("No where to go")
+            }
         }
     }
     
     @IBAction func goToMainPage(_ sender: Any) {
-        performSegue(withIdentifier: "gotomainpage", sender: self)
+//        performSegue(withIdentifier: "gotomainpage", sender: self)
     }
     
     @IBAction func goToPreviousPage(_ sender: Any) {
         switch from {
         case "length":
             performSegue(withIdentifier: "gotolength", sender: self)
+        case "area":
+            performSegue(withIdentifier: "gotoarea", sender: self)
+        case "volume":
+            performSegue(withIdentifier: "gotovolume", sender: self)
+        case "speed":
+            performSegue(withIdentifier: "gotospeed", sender: self)
+        case "temperature":
+            performSegue(withIdentifier: "gototemperature", sender: self)
+        case "energy":
+            performSegue(withIdentifier: "gotoenergy", sender: self)
         default:
             print("No where to go")
         }

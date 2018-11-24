@@ -1,9 +1,9 @@
 import UIKit
 
-class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EnergyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let areaunit = ["m²","km²","dm²","cm²","in²","ft²","yd²","ha"]
-    let areakey = [1.0,0.000001,100.0,10000.0,1550.00310001,10.76391041671,1.195990046301,0.0001]
+    let energyunit = ["J","kJ","cal","kcal","kWh"]
+    let energykey = [1.0,0.001,0.2388458966,0.0002388458966,0.0000002778]
     
     var fromindex = 0
     var toindex = 0
@@ -16,11 +16,11 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return areaunit.count
+        return energyunit.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return areaunit[row]
+        return energyunit[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -31,10 +31,13 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             toindex = row
         }
     }
-
+    
     override func viewDidLoad() {
-        print("get")
         super.viewDidLoad()
+        frompick.delegate = self
+        frompick.dataSource = self
+        topick.delegate = self
+        topick.dataSource = self
     }
     
     @IBOutlet weak var frompick: UIPickerView!
@@ -44,7 +47,7 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func calculate(_ sender: Any) {
         if let input = Double(inputvalue.text!) {
-            tovalue = (input/areakey[fromindex])*areakey[toindex]
+            tovalue = (input/energykey[fromindex])*energykey[toindex]
             outputvalue.text = String(tovalue)
             vaild = true
         } else {
@@ -53,8 +56,13 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
+    @IBAction func goback(_ sender: Any) {
+        //        performSegue(withIdentifier: "goback", sender: self)
+    }
+    
+    
     @IBAction func gotoableview(_ sender: Any) {
-        let from = "area"
+        let from = "energy"
         UserDefaults.standard.set(from, forKey: "from")
         performSegue(withIdentifier: "gototableview", sender: self)
     }
@@ -63,15 +71,16 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         print(vaild)
         if vaild {
             var items : [String]
-            let SavedLength = UserDefaults.standard.object(forKey: "area")
+            let SavedLength = UserDefaults.standard.object(forKey: "energy")
             if let temp = SavedLength as? [String] {
                 items = temp
-                items.append(inputvalue.text! + "  " + String(areaunit[fromindex]) + "  " + outputvalue.text! + "  " + String(areaunit[toindex]))
+                items.append(inputvalue.text! + "  " + String(energyunit[fromindex]) + "  " + outputvalue.text! + "  " + String(energyunit[toindex]))
                 vaild = false
             }else{
-                items = [inputvalue.text! + "  " + String(areaunit[fromindex]) + "  " + outputvalue.text! + "  " + String(areaunit[toindex])]
+                items = [inputvalue.text! + "  " + String(energyunit[fromindex]) + "  " + outputvalue.text! + "  " + String(energyunit[toindex])]
             }
-            UserDefaults.standard.set(items, forKey: "area")
+            
+            UserDefaults.standard.set(items, forKey: "energy")
             
         }
     }
