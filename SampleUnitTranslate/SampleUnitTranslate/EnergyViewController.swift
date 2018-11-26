@@ -57,7 +57,7 @@ class EnergyViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func goback(_ sender: Any) {
-        //        performSegue(withIdentifier: "goback", sender: self)
+                performSegue(withIdentifier: "goback", sender: self)
     }
     
     

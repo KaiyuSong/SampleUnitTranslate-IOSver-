@@ -53,6 +53,10 @@ class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
+    @IBAction func goback(_ sender: Any) {
+        performSegue(withIdentifier: "goback", sender: self)
+    }
+    
     @IBAction func gotoableview(_ sender: Any) {
         let from = "area"
         UserDefaults.standard.set(from, forKey: "from")

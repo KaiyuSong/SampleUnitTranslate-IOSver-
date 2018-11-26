@@ -114,7 +114,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func goToMainPage(_ sender: Any) {
-//        performSegue(withIdentifier: "gotomainpage", sender: self)
+        performSegue(withIdentifier: "goback", sender: self)
     }
     
     @IBAction func goToPreviousPage(_ sender: Any) {

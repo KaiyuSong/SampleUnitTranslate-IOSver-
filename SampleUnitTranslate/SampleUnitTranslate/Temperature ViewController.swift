@@ -85,7 +85,7 @@ class Temperature_ViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func goback(_ sender: Any) {
-        //        performSegue(withIdentifier: "goback", sender: self)
+                performSegue(withIdentifier: "goback", sender: self)
     }
     
     

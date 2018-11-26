@@ -20,6 +20,7 @@
 		AE4FE21C21A8F81B00F45C0F /* Temperature ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FE21B21A8F81B00F45C0F /* Temperature ViewController.swift */; };
 		AE4FE21E21A8FDF600F45C0F /* EnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FE21D21A8FDF600F45C0F /* EnergyViewController.swift */; };
 		AE93439821A7CF3A009E67BF /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93439721A7CF3A009E67BF /* AreaViewController.swift */; };
+		AEEFDCCB21AC73CF00411C10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFDCCA21AC73CF00411C10 /* MainViewController.swift */; };
 		AEF8916821991D61003D203B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8916721991D61003D203B /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		AE4FE21B21A8F81B00F45C0F /* Temperature ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Temperature ViewController.swift"; sourceTree = "<group>"; };
 		AE4FE21D21A8FDF600F45C0F /* EnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyViewController.swift; sourceTree = "<group>"; };
 		AE93439721A7CF3A009E67BF /* AreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
+		AEEFDCCA21AC73CF00411C10 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AEF8916721991D61003D203B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 			children = (
 				AE221CDC218EA1A20021E4C1 /* ViewController.swift */,
 				AE221CDE218EA1A20021E4C1 /* Main.storyboard */,
+				AEEFDCCA21AC73CF00411C10 /* MainViewController.swift */,
 				AE1A4DD9218EAF44001B00B8 /* LengthViewController.swift */,
 				AE93439721A7CF3A009E67BF /* AreaViewController.swift */,
 				AE4FE21721A8E72800F45C0F /* VolumeViewController.swift */,
@@ -286,6 +289,7 @@
 				AE221CDB218EA1A20021E4C1 /* AppDelegate.swift in Sources */,
 				AEF8916821991D61003D203B /* TableViewController.swift in Sources */,
 				AE4FE21E21A8FDF600F45C0F /* EnergyViewController.swift in Sources */,
+				AEEFDCCB21AC73CF00411C10 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
